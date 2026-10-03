@@ -1,0 +1,22 @@
+/* AVIORCART Default Theme Baseline */
+:root {
+  --gold: #fbbf24;
+  --gold-dark: #d97706;
+  --black: #060608;
+  --dark: #0d0d12;
+  --card: #13131a;
+  --card2: #1a1a24;
+  --white: #ffffff;
+  --cream: #fffef9;
+  --gray-50: #f9fafb;
+  --gray-100: #f3f4f6;
+  --gray-200: #e5e7eb;
+  --gray-400: #9ca3af;
+  --gray-500: #6b7280;
+  --gray-700: #374151;
+  --gray-900: #111827;
+  --radius: 8px;
+  --success: #22c55e;
+  --failed: #ef4444;
+  --pending: #f59e0b;
+}
