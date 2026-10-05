@@ -1,14 +1,21 @@
 /* bootstrap */
 
+let _dashStarted = false;
+
 document.addEventListener("DOMContentLoaded", function () {
   initSupabase();
   initStarBackground();
   wireLoginForm();
   wireDashboardControls();
 
-  // Bypass login – directly show dashboard
-  showDashboard();
-  initRouter();
+  checkSession()
+    .then(function (ok) {
+      if (ok) showDashboard();
+      else toggleScreen("login-screen", true);
+    })
+    .catch(function () {
+      toggleScreen("login-screen", true);
+    });
 });
 
 function showDashboard(): void {
@@ -16,6 +23,9 @@ function showDashboard(): void {
   toggleScreen("dashboard-screen", true);
   const el = document.getElementById("welcome-user");
   if (el && currentUser) el.textContent = "👋 " + currentUser.email;
+  if (_dashStarted) return;
+  _dashStarted = true;
+  initRouter();
   fetchOrders();
   subscribeRealtime();
 }

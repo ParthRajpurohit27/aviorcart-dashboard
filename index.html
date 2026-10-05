@@ -14,7 +14,7 @@
 
 <canvas id="bg-canvas"></canvas>
 
-<!-- login screen (hidden — login bypassed) -->
+<!-- login screen (shown only when there is no valid session) -->
 <div class="login-wrap" id="login-screen" style="display:none;">
   <div class="login-card">
     <div class="login-card__logo">
@@ -38,7 +38,7 @@
 </div>
 
 <!-- dashboard screen -->
-<div id="dashboard-screen" style="display:flex;flex-direction:column;min-height:100vh;">
+<div id="dashboard-screen" style="display:none;flex-direction:column;min-height:100vh;">
 
   <!-- Top Navigation -->
   <nav class="top-nav">
@@ -176,6 +176,7 @@
 <script src="assets/dist/config.js"></script>
 <script src="assets/dist/types.js"></script>
 <script src="assets/dist/supabaseClient.js"></script>
+<script src="assets/dist/api.js"></script>
 <script src="assets/dist/auth.js"></script>
 <script src="assets/dist/orders.js"></script>
 <script src="assets/dist/exportUtil.js"></script>

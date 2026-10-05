@@ -35,7 +35,7 @@ interface AuthResult {
 }
 
 interface SupabaseAuthResponse {
-  data: { user?: { email?: string } | null; session?: { user: { email: string } } | null };
+  data: { user?: { email?: string } | null; session?: { user: { email: string }; access_token?: string } | null };
   error: { message: string } | null;
 }
 
